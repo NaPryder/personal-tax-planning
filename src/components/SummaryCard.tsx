@@ -19,7 +19,9 @@ export function SummaryCard({
 }: SummaryCardProps) {
   return (
     <Card className={`${className}`}>
-      <CardContent className="pt-6">
+      <CardContent
+      // className="pt-6"
+      >
         <div className="flex items-center justify-between">
           <div className="flex-1">
             <p className="text-sm font-medium text-gray-600">{title}</p>

@@ -4,8 +4,8 @@ import { useState } from 'react';
 import { Info } from 'lucide-react';
 import { TaxPlan, ExpenseItem } from '@/types/tax';
 import { formatCurrency, calculateStandardExpense } from '@/lib/taxCalculation';
-import { ExpenseTable } from './ExpenseTable';
-import { ExpenseEditDialog } from './ExpenseEditDialog';
+import { ExpenseTable } from '../ExpenseTable';
+import { ExpenseEditDialog } from '../ExpenseEditDialog';
 
 interface ExpenseFormProps {
   taxPlan: TaxPlan;
@@ -74,7 +74,10 @@ export function ExpenseForm({ taxPlan, onUpdatePlan }: ExpenseFormProps) {
     <div className="space-y-4">
       <div className="flex justify-between items-center">
         <p className="text-sm text-gray-600">
-          Total Expenses: <span className="font-medium">{formatCurrency(totalExpenses)}</span>
+          รวมค่าใช้จ่าย:
+          <span className="font-medium">
+            {formatCurrency(totalExpenses)}
+          </span>
         </p>
         <div className="flex items-center gap-2 text-xs text-blue-600">
           <Info className="w-3 h-3" />

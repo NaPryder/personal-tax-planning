@@ -7,79 +7,79 @@ const STANDARD_DEDUCTIONS_KEY = 'thai-standard-deductions';
 const DEFAULT_STANDARD_DEDUCTIONS: StandardDeduction[] = [
   {
     id: 'personal-deduction',
-    name: 'Personal Deduction (ค่าลดหย่อนส่วนตัว)',
+    name: 'ค่าลดหย่อนส่วนตัว',
     maxAmount: 60000,
-    description: 'Standard personal allowance for all taxpayers',
+    description: 'ค่าลดหย่อนส่วนตัวมาตรฐานสำหรับผู้เสียภาษีทุกคน',
     category: 'personal'
   },
   {
     id: 'spouse-deduction',
-    name: 'Spouse Deduction (ค่าลดหย่อนคู่สมรส)',
+    name: 'ค่าลดหย่อนคู่สมรส',
     maxAmount: 60000,
-    description: 'Deduction for spouse without income',
+    description: 'ค่าลดหย่อนสำหรับคู่สมรสที่ไม่มีรายได้',
     category: 'spouse'
   },
   {
     id: 'child-deduction',
-    name: 'Child Deduction (ค่าลดหย่อนบุตร)',
+    name: 'ค่าลดหย่อนบุตร',
     maxAmount: 30000,
-    description: 'Per child under 25 years old',
+    description: 'ต่อบุตรที่อายุต่ำกว่า 25 ปี',
     category: 'child'
   },
   {
     id: 'parent-deduction',
-    name: 'Parent Deduction (ค่าลดหย่อนบิดามารดา)',
+    name: 'ค่าลดหย่อนบิดามารดา',
     maxAmount: 30000,
-    description: 'Per parent over 60 years old',
+    description: 'ต่อบิดามารดาที่อายุเกิน 60 ปี',
     category: 'parent'
   },
   {
     id: 'social-security',
-    name: 'Social Security (ประกันสังคม)',
+    name: 'ประกันสังคม',
     maxAmount: 9000,
-    description: 'Social security contributions',
+    description: 'เงินสมทบประกันสังคม',
     category: 'insurance'
   },
   {
     id: 'life-insurance',
-    name: 'Life Insurance (ประกันชีวิต)',
+    name: 'ประกันชีวิต',
     maxAmount: 100000,
-    description: 'Life insurance premiums',
+    description: 'รวมเบี้ยประกันชีวิต ตลอดทั้งปี',
     category: 'insurance'
   },
   {
     id: 'health-insurance',
-    name: 'Health Insurance (ประกันสุขภาพ)',
+    name: 'ประกันสุขภาพ',
     maxAmount: 25000,
-    description: 'Health insurance premiums',
+    description: 'รวมเบี้ยประกันสุขภาพ ตลอดทั้งปี',
     category: 'insurance'
   },
   {
     id: 'donation-education',
-    name: 'Education Donation (บริจาคการศึกษา)',
+    name: 'บริจาคการศึกษา',
     maxAmount: 0, // No limit, but max 2x normal donation
-    description: 'Donations to educational institutions',
+    description: 'เงินบริจาคให้สถาบันการศึกษา',
     category: 'donation'
   },
   {
     id: 'donation-general',
-    name: 'General Donation (บริจาคทั่วไป)',
+    name: 'บริจาคทั่วไป',
     maxAmount: 0, // Calculated as % of income
-    description: 'General charitable donations (max 10% of income)',
+    description: 'เงินบริจาคทั่วไป (สูงสุด 10% ของรายได้)',
     category: 'donation'
   },
   {
     id: 'rmf-ltf',
-    name: 'RMF/LTF Investment (กองทุน RMF/LTF)',
+    name: 'กองทุน RMF/LTF/SSF',
     maxAmount: 500000,
-    description: 'Retirement and long-term equity fund investments',
+    description: 'การลงทุนในกองทุนรวมเพื่อการเกษียณและกองทุนรวมหุ้นระยะยาว',
     category: 'other'
   },
   {
     id: 'home-mortgage',
-    name: 'Home Mortgage Interest (ดอกเบี้ยบ้าน)',
+    name: 'ดอกเบี้ยบ้าน',
     maxAmount: 100000,
-    description: 'Interest on home mortgage',
+    description: 'ดอกเบี้ยเงินกู้ซื้อบ้าน',
     category: 'other'
   }
 ];

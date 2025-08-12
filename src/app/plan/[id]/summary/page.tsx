@@ -25,6 +25,7 @@ import {
   TAX_BRACKETS
 } from '@/lib/taxCalculation';
 import { SummaryCard } from '@/components/SummaryCard';
+import PlanHeader from '@/components/plan/PlanHeader';
 
 export default function SummaryPage() {
   const params = useParams();
@@ -68,33 +69,19 @@ export default function SummaryPage() {
   const summary = calculateTaxSummary(taxPlan);
 
   return (
-    <div className="container mx-auto py-8 px-4 max-w-6xl">
-      {/* Header */}
-      <div className="flex justify-between items-center mb-8">
-        <div className="flex items-center gap-4">
-          <Button asChild variant="ghost">
-            <Link href="/" className="flex items-center gap-2">
-              <ArrowLeft className="w-4 h-4" />
-              Back to Dashboard
+    <>
+      <PlanHeader
+        headerName={`[สรุป] - ${taxPlan.name}`}
+        taxPlan={taxPlan}
+        renderActions={() => (
+          <Button asChild className="flex items-center gap-2">
+            <Link href={`/plan/${taxPlan.id}`}>
+              <Edit className="w-4 h-4" />
+              Edit Plan
             </Link>
           </Button>
-          <div>
-            <h1 className="text-3xl font-bold text-gray-900">{taxPlan.name} - Summary</h1>
-            <div className="flex items-center gap-2 mt-1">
-              <Badge variant="secondary">Tax Year {taxPlan.year}</Badge>
-              <span className="text-sm text-gray-500">
-                Updated {taxPlan.updatedAt.toLocaleDateString()}
-              </span>
-            </div>
-          </div>
-        </div>
-        <Button asChild className="flex items-center gap-2">
-          <Link href={`/plan/${taxPlan.id}`}>
-            <Edit className="w-4 h-4" />
-            Edit Plan
-          </Link>
-        </Button>
-      </div>
+        )}
+      />
 
       {/* Summary Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
@@ -313,6 +300,6 @@ export default function SummaryPage() {
           </CardContent>
         </Card>
       </div>
-    </div>
+    </>
   );
 }

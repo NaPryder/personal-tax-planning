@@ -83,14 +83,14 @@ export function calculateTaxSummary(taxPlan: TaxPlan): TaxSummary {
 // Get income type display name in Thai
 export function getIncomeTypeDisplayName(type: IncomeType): string {
   const names: Record<IncomeType, string> = {
-    [IncomeType.EMPLOYMENT]: 'เงินเดือน ค่าจ้าง (Employment Income)',
-    [IncomeType.PROFESSIONAL_FEES]: 'ค่าตอบแทนวิชาชีพอิสระ (Professional Fees)',
-    [IncomeType.GOODWILL]: 'ค่าความนิยม ลิขสิทธิ์ (Goodwill & Copyright)',
-    [IncomeType.INTEREST_DIVIDEND]: 'ดอกเบี้ย เงินปันผล (Interest & Dividends)',
-    [IncomeType.RENTAL_PROPERTY]: 'ค่าเช่าทรัพย์สิน (Rental Income)',
-    [IncomeType.LIBERAL_PROFESSION]: 'อาชีพอิสระ (Liberal Profession)',
-    [IncomeType.CONTRACTS_ADVERTISING]: 'งานตามสัญญา โฆษณา (Contract & Advertising)',
-    [IncomeType.OTHER_INCOME]: 'รายได้อื่นๆ (Other Income)'
+    [IncomeType.EMPLOYMENT]: '40(1): เงินเดือน ค่าจ้าง (Employment Income)',
+    [IncomeType.PROFESSIONAL_FEES]: '40(2): ค่าตอบแทนวิชาชีพอิสระ (Professional Fees)',
+    [IncomeType.GOODWILL]: '40(3): ค่าความนิยม ลิขสิทธิ์ (Goodwill & Copyright)',
+    [IncomeType.INTEREST_DIVIDEND]: '40(4): ดอกเบี้ย เงินปันผล (Interest & Dividends)',
+    [IncomeType.RENTAL_PROPERTY]: '40(5): ค่าเช่าทรัพย์สิน (Rental Income)',
+    [IncomeType.LIBERAL_PROFESSION]: '40(6): อาชีพอิสระ (Liberal Profession)',
+    [IncomeType.CONTRACTS_ADVERTISING]: '40(7): งานตามสัญญา โฆษณา (Contract & Advertising)',
+    [IncomeType.OTHER_INCOME]: '40(8): รายได้อื่นๆ (Other Income)'
   };
 
   return names[type] || 'Unknown Income Type';
@@ -101,8 +101,8 @@ export function formatCurrency(amount: number): string {
   return new Intl.NumberFormat('th-TH', {
     style: 'currency',
     currency: 'THB',
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 0
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
   }).format(amount);
 }
 
