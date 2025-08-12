@@ -186,7 +186,25 @@ export default function SummaryPage() {
                   return (
                     <TableRow key={index} className={isApplicable ? 'bg-blue-50' : ''}>
                       <TableCell className="text-sm">
-                        {formatCurrency(bracket.min)} - {bracket.max ? formatCurrency(bracket.max) : 'Above'}
+                        {
+                          formatCurrency(
+                            bracket.min,
+                            {
+                              minimumFractionDigits: 0,
+                              maximumFractionDigits: 0,
+                            }
+                          )
+                        } - {
+                          bracket.max
+                            ? formatCurrency(
+                              bracket.max,
+                              {
+                                minimumFractionDigits: 0,
+                                maximumFractionDigits: 0,
+                              }
+                            )
+                            : 'Above'
+                        }
                       </TableCell>
                       <TableCell className="text-right font-medium">
                         {(bracket.rate * 100).toFixed(0)}%

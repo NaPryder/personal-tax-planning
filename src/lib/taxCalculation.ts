@@ -97,12 +97,13 @@ export function getIncomeTypeDisplayName(type: IncomeType): string {
 }
 
 // Format currency in Thai Baht
-export function formatCurrency(amount: number): string {
+export function formatCurrency(amount: number, option?: Intl.NumberFormatOptions): string {
   return new Intl.NumberFormat('th-TH', {
     style: 'currency',
     currency: 'THB',
     minimumFractionDigits: 2,
-    maximumFractionDigits: 2
+    maximumFractionDigits: 2,
+    ...option
   }).format(amount);
 }
 

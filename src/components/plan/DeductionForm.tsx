@@ -1,8 +1,15 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { Plus, Edit, Trash2, Check } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import {
+  Dialog,
+  DialogContent,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import {
@@ -12,27 +19,11 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from '@/components/ui/table';
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogFooter,
-} from '@/components/ui/dialog';
-import { Badge } from '@/components/ui/badge';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Separator } from '@/components/ui/separator';
-import { TaxPlan, DeductionItem, StandardDeduction } from '@/types/tax';
-import { formatCurrency } from '@/lib/taxCalculation';
 import { generateId, loadStandardDeductions } from '@/lib/localStorage';
+import { formatCurrency } from '@/lib/taxCalculation';
+import { DeductionItem, StandardDeduction, TaxPlan } from '@/types/tax';
+import { Check, Edit, Plus, Trash2 } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 interface DeductionFormProps {
   taxPlan: TaxPlan;
@@ -186,7 +177,7 @@ export function DeductionForm({ taxPlan, onUpdatePlan }: DeductionFormProps) {
   };
 
   const totalDeductions = taxPlan.deductions.reduce((sum, deduction) => sum + deduction.amount, 0);
-  const totalIncome = taxPlan.incomes.reduce((sum, income) => sum + income.amount, 0);
+  // const totalIncome = taxPlan.incomes.reduce((sum, income) => sum + income.amount, 0);
 
   // Group deductions by category
   const groupedDeductions = taxPlan.deductions.reduce((acc, deduction) => {

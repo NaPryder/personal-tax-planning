@@ -1,9 +1,6 @@
-import React, { PropsWithChildren } from 'react'
-import { Badge } from '../ui/badge'
 import { TaxPlan } from '@/types/tax';
-import { Button } from '../ui/button';
-import Link from 'next/link';
-import { Calculator } from 'lucide-react';
+import React from 'react';
+import { Badge } from '../ui/badge';
 
 
 interface PlanHeaderProps {

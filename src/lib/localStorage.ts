@@ -108,7 +108,7 @@ export function loadTaxPlans(): TaxPlan[] {
 
     const parsed = JSON.parse(stored);
     // Convert ISO strings back to Date objects
-    return parsed.map((plan: any) => ({
+    return parsed.map((plan: TaxPlan) => ({
       ...plan,
       createdAt: new Date(plan.createdAt),
       updatedAt: new Date(plan.updatedAt)

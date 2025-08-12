@@ -1,22 +1,16 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { useParams, useRouter } from 'next/navigation';
-import Link from 'next/link';
-import { ArrowLeft, Calculator } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { TaxPlan } from '@/types/tax';
-import { getTaxPlan, saveTaxPlan } from '@/lib/localStorage';
-import { calculateTaxSummary, formatCurrency, generateExpensesFromIncomes } from '@/lib/taxCalculation';
-import { IncomeForm } from '@/components/plan/IncomeForm';
-import { ExpenseForm } from '@/components/plan/ExpenseForm';
-import { DeductionForm } from '@/components/plan/DeductionForm';
-import QuickSummaryCard from '@/components/plan/QuickSummaryCard';
-import PlanHeader from '@/components/plan/PlanHeader';
 import EditTabs from '@/components/plan/EditTabs';
+import PlanHeader from '@/components/plan/PlanHeader';
+import QuickSummaryCard from '@/components/plan/QuickSummaryCard';
+import { Button } from '@/components/ui/button';
+import { getTaxPlan, saveTaxPlan } from '@/lib/localStorage';
+import { calculateTaxSummary, generateExpensesFromIncomes } from '@/lib/taxCalculation';
+import { TaxPlan } from '@/types/tax';
+import { Calculator } from 'lucide-react';
+import Link from 'next/link';
+import { useParams, useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 export default function PlanEditPage() {
   const params = useParams();

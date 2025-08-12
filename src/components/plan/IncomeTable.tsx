@@ -1,6 +1,5 @@
 'use client';
 
-import { Edit, EllipsisIcon, EllipsisVertical, EllipsisVerticalIcon, Trash2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Table,
@@ -10,12 +9,13 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
+import { formatCurrency, getIncomeTypeDisplayName } from '@/lib/taxCalculation';
 import { IncomeItem, IncomeType } from '@/types/tax';
-import { getIncomeTypeDisplayName, formatCurrency } from '@/lib/taxCalculation';
+import { EllipsisIcon, Trash2 } from 'lucide-react';
+import { useState } from 'react';
 import { Badge, BadgeVariant } from '../ui/badge';
 import { Tooltip, TooltipContent, TooltipTrigger } from '../ui/tooltip';
 import ConfirmationDialog from './ConfirmationDialog';
-import { useState } from 'react';
 
 interface IncomeTableProps {
   incomes: IncomeItem[];
