@@ -245,8 +245,10 @@ export default function SummaryPage() {
               <p className="text-gray-500 text-sm">No expenses calculated</p>
             ) : (
               <div className="space-y-3">
-                {taxPlan.expenses.map((expense) => (
-                  <div key={expense.id} className="flex justify-between items-start text-sm">
+                {taxPlan.expenses.map((expense, i) => (
+                  <div key={`${expense.id}_${i}`}
+                    className="flex justify-between items-start text-sm"
+                  >
                     <div className="flex-1 mr-2">
                       <p className="font-medium">{expense.description}</p>
                       <div className="flex items-center gap-1 mt-1">
