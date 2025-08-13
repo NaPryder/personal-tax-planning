@@ -36,7 +36,7 @@ const ConfirmationDialog = ({
           </DialogTitle>
         </DialogHeader>
 
-        <DialogDescription>
+        <DialogDescription asChild>
           {description()}
         </DialogDescription>
 
@@ -60,6 +60,7 @@ const ConfirmationDialog = ({
                 e.preventDefault()
                 e.stopPropagation()
                 onConfirm()
+                onClose()
               }}
             >
               ยืนยัน
