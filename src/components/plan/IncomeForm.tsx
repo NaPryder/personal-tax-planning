@@ -8,7 +8,6 @@ import { formatCurrency } from '@/lib/taxCalculation';
 import { generateId } from '@/lib/localStorage';
 import { IncomeTable } from './IncomeTable';
 import { IncomeDialog } from './IncomeDialog';
-import ConfirmationDialog from './ConfirmationDialog';
 
 interface IncomeFormProps {
   taxPlan: TaxPlan;

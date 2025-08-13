@@ -9,8 +9,8 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import { TaxSummary } from '@/types/tax';
 import { formatCurrency, TAX_BRACKETS } from '@/lib/taxCalculation';
+import { TaxBracket, TaxSummary } from '@/types/tax';
 
 interface TaxBracketsCardProps {
   summary: TaxSummary;
@@ -18,7 +18,7 @@ interface TaxBracketsCardProps {
 
 export function TaxBracketsCard({ summary }: TaxBracketsCardProps) {
   // Helper function to calculate tax for each bracket
-  const calculateTaxForBracket = (bracket: any, netIncome: number) => {
+  const calculateTaxForBracket = (bracket: TaxBracket, netIncome: number) => {
     if (netIncome <= bracket.min) return 0;
 
     const taxableInThisBracket = bracket.max
