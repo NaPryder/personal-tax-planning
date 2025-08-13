@@ -34,7 +34,7 @@ export function IncomeTable({
   if (incomes.length === 0) {
     return (
       <div className="text-center py-8 text-gray-500">
-        ยังไม่มีแหล่งรายได้ กดปุ่ม &quot;เพิ่มรายได้&quot; เพื่อเริ่มต้น
+        ยังไม่มีแหล่งเงินได้ กดปุ่ม &quot;เพิ่มเงินได้&quot; เพื่อเริ่มต้น
       </div>
     );
   }
@@ -45,17 +45,17 @@ export function IncomeTable({
         open={isConfirmationDialogOpen}
         onClose={() => setIsConfirmationDialogOpen(false)}
         onConfirm={() => deletingIncome?.id && onDeleteIncome(deletingIncome.id)}
-        title={`ยืนยันการลบรายได้ `}
+        title={`ยืนยันการลบเงินได้ `}
         description={() => deletingIncome?.id && (
           <div className='flex flex-col gap-1'>
             <strong>
               {getIncomeTypeDisplayName(deletingIncome?.type)}
             </strong>
             <p>
-              คำอธิบายรายได้: {deletingIncome?.description}
+              คำอธิบายเงินได้: {deletingIncome?.description}
             </p>
             <p>
-              รายได้: {formatCurrency(deletingIncome?.amount)}
+              เงินได้: {formatCurrency(deletingIncome?.amount)}
             </p>
             <p>
               ภาษีหัก ณ ที่จ่าย: {formatCurrency(deletingIncome?.withholdingTax)}
@@ -172,7 +172,7 @@ const CellIncomeType = ({ income }: {
           <div className='flex flex-col gap-1'>
             <p>{displayType}</p>
             <hr />
-            <p>คำอธิบายรายได้: {income.description}</p>
+            <p>คำอธิบายเงินได้: {income.description}</p>
           </div>
         </TooltipContent>
       </Tooltip>

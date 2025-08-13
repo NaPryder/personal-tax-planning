@@ -10,7 +10,7 @@ A comprehensive web application for planning and calculating personal income tax
 - Edit and delete tax plans with confirmation dialogs
 
 ### 💰 Income Tracking
-- Support for all 8 Thai income categories (ประเภทรายได้ 8 ประเภท):
+- Support for all 8 Thai income categories (ประเภทเงินได้ 8 ประเภท):
   1. เงินเดือน ค่าจ้าง (Employment Income)
   2. ค่าตอบแทนวิชาชีพอิสระ (Professional Fees)
   3. ค่าความนิยม ลิขสิทธิ์ (Goodwill & Copyright)

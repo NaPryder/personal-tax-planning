@@ -49,7 +49,7 @@ const EditTabs = ({
           <CardHeader>
             <CardTitle>แหล่งที่มาของเงินได้</CardTitle>
             <p className="text-sm text-gray-600">
-              เพิ่มที่มาของเงินรายได้ที่ต้องเสียภาษี {" "}
+              เพิ่มที่มาของเงินเงินได้ที่ต้องเสียภาษี {" "}
               <a
                 href="https://www.rd.go.th/553.html"
                 className='underline'
@@ -73,7 +73,7 @@ const EditTabs = ({
             <CardTitle>ค่าใช้จ่าย</CardTitle>
             <p className="text-sm text-gray-600">
               {/* Expenses are automatically calculated based on income type, but can be manually overridden */}
-              ค่าใช้จ่ายจะถูกคำนวณอัตโนมัติตามประเภทรายได้ แต่สามารถปรับแต่งด้วยตนเองได้
+              ค่าใช้จ่ายจะถูกคำนวณอัตโนมัติตามประเภทเงินได้ แต่สามารถปรับแต่งด้วยตนเองได้
             </p>
           </CardHeader>
           <CardContent>

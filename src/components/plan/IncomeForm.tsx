@@ -76,7 +76,7 @@ export function IncomeForm({ taxPlan, onUpdatePlan }: IncomeFormProps) {
         </p>
         <Button onClick={() => handleOpenDialog()} className="flex items-center gap-2">
           <Plus className="w-4 h-4" />
-          เพิ่มรายได้
+          เพิ่มเงินได้
         </Button>
       </div>
 

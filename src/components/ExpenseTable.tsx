@@ -47,8 +47,10 @@ export function ExpenseTable({
           </TableRow>
         </TableHeader>
         <TableBody>
-          {expenses.map((expense) => (
-            <TableRow key={expense.id}>
+          {expenses.map((expense, i) => (
+            <TableRow
+              key={`${expense.id}_${i}`}
+            >
               <TableCell className="text-sm">
                 <div className="font-medium">Type {expense.incomeType}</div>
                 <div className="text-xs text-gray-500 max-w-48 truncate">
