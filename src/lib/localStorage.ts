@@ -1,4 +1,4 @@
-import { TaxPlan, StandardDeduction } from '../types/tax';
+import { TaxPlan, StandardDeduction, DeductionCategory } from '../types/tax';
 
 const TAX_PLANS_KEY = 'thai-tax-plans';
 const STANDARD_DEDUCTIONS_KEY = 'thai-standard-deductions';
@@ -10,77 +10,77 @@ const DEFAULT_STANDARD_DEDUCTIONS: StandardDeduction[] = [
     name: 'ค่าลดหย่อนส่วนตัว',
     maxAmount: 60000,
     description: 'ค่าลดหย่อนส่วนตัวมาตรฐานสำหรับผู้เสียภาษีทุกคน',
-    category: 'personal'
+    category: DeductionCategory.PERSONAL
   },
   {
     id: 'spouse-deduction',
     name: 'ค่าลดหย่อนคู่สมรส',
     maxAmount: 60000,
     description: 'ค่าลดหย่อนสำหรับคู่สมรสที่ไม่มีรายได้',
-    category: 'spouse'
+    category: DeductionCategory.SPOUSE
   },
   {
     id: 'child-deduction',
     name: 'ค่าลดหย่อนบุตร',
     maxAmount: 30000,
     description: 'ต่อบุตรที่อายุต่ำกว่า 25 ปี',
-    category: 'child'
+    category: DeductionCategory.CHILD
   },
   {
     id: 'parent-deduction',
     name: 'ค่าลดหย่อนบิดามารดา',
     maxAmount: 30000,
     description: 'ต่อบิดามารดาที่อายุเกิน 60 ปี',
-    category: 'parent'
+    category: DeductionCategory.PARENT
   },
   {
     id: 'social-security',
     name: 'ประกันสังคม',
     maxAmount: 9000,
     description: 'เงินสมทบประกันสังคม',
-    category: 'insurance'
+    category: DeductionCategory.INSURANCE
   },
   {
     id: 'life-insurance',
     name: 'ประกันชีวิต',
     maxAmount: 100000,
     description: 'รวมเบี้ยประกันชีวิต ตลอดทั้งปี',
-    category: 'insurance'
+    category: DeductionCategory.INSURANCE
   },
   {
     id: 'health-insurance',
     name: 'ประกันสุขภาพ',
     maxAmount: 25000,
     description: 'รวมเบี้ยประกันสุขภาพ ตลอดทั้งปี',
-    category: 'insurance'
+    category: DeductionCategory.INSURANCE
   },
   {
     id: 'donation-education',
     name: 'บริจาคการศึกษา',
     maxAmount: 0, // No limit, but max 2x normal donation
     description: 'เงินบริจาคให้สถาบันการศึกษา',
-    category: 'donation'
+    category: DeductionCategory.DONATION
   },
   {
     id: 'donation-general',
     name: 'บริจาคทั่วไป',
     maxAmount: 0, // Calculated as % of income
     description: 'เงินบริจาคทั่วไป (สูงสุด 10% ของรายได้)',
-    category: 'donation'
+    category: DeductionCategory.DONATION
   },
   {
     id: 'rmf-ltf',
     name: 'กองทุน RMF/LTF/SSF',
     maxAmount: 500000,
     description: 'การลงทุนในกองทุนรวมเพื่อการเกษียณและกองทุนรวมหุ้นระยะยาว',
-    category: 'other'
+    category: DeductionCategory.OTHER
   },
   {
     id: 'home-mortgage',
     name: 'ดอกเบี้ยบ้าน',
     maxAmount: 100000,
     description: 'ดอกเบี้ยเงินกู้ซื้อบ้าน',
-    category: 'other'
+    category: DeductionCategory.OTHER
   }
 ];
 

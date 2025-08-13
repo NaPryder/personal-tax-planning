@@ -28,8 +28,8 @@ export function ExpenseTable({
   if (expenses.length === 0) {
     return (
       <div className="text-center py-8 text-gray-500">
-        <p className="mb-2">No expenses yet.</p>
-        <p className="text-sm">Expenses will be automatically generated when you add income sources.</p>
+        <p className="mb-2">ยังไม่มีค่าใช้จ่าย</p>
+        <p className="text-sm">ค่าใช้จ่ายจะถูกสร้างโดยอัตโนมัติเมื่อคุณเพิ่มแหล่งรายได้</p>
       </div>
     );
   }
@@ -39,11 +39,11 @@ export function ExpenseTable({
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead>Income Type</TableHead>
-            <TableHead>Description</TableHead>
-            <TableHead className="text-right">Amount</TableHead>
-            <TableHead className="text-center">Status</TableHead>
-            <TableHead className="w-32">Actions</TableHead>
+            <TableHead>ประเภทรายได้</TableHead>
+            <TableHead>รายละเอียด</TableHead>
+            <TableHead className="text-right">จำนวนเงิน</TableHead>
+            <TableHead className="text-center">สถานะ</TableHead>
+            <TableHead className="w-32">การจัดการ</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -52,7 +52,7 @@ export function ExpenseTable({
               key={`${expense.id}_${i}`}
             >
               <TableCell className="text-sm">
-                <div className="font-medium">Type {expense.incomeType}</div>
+                <div className="font-medium">ประเภท {expense.incomeType}</div>
                 <div className="text-xs text-gray-500 max-w-48 truncate">
                   {getIncomeTypeDisplayName(expense.incomeType)}
                 </div>
@@ -61,7 +61,7 @@ export function ExpenseTable({
                 <div>{expense.description}</div>
                 {expense.defaultPercentage && (
                   <div className="text-xs text-gray-500">
-                    Default: {(expense.defaultPercentage * 100)}% of income
+                    ค่าเริ่มต้น: {(expense.defaultPercentage * 100)}% ของรายได้
                   </div>
                 )}
               </TableCell>
@@ -73,7 +73,7 @@ export function ExpenseTable({
                   variant={expense.isManualOverride ? "default" : "secondary"}
                   className="text-xs"
                 >
-                  {expense.isManualOverride ? 'Manual' : 'Auto'}
+                  {expense.isManualOverride ? 'กำหนดเอง' : 'อัตโนมัติ'}
                 </Badge>
               </TableCell>
               <TableCell>
@@ -82,7 +82,7 @@ export function ExpenseTable({
                     variant="ghost"
                     size="sm"
                     onClick={() => onEditExpense(expense)}
-                    title="Edit amount"
+                    title="แก้ไขจำนวนเงิน"
                   >
                     <Edit className="w-3 h-3" />
                   </Button>
@@ -91,7 +91,7 @@ export function ExpenseTable({
                       variant="ghost"
                       size="sm"
                       onClick={() => onResetToDefault(expense)}
-                      title="Reset to default"
+                      title="รีเซ็ตเป็นค่าเริ่มต้น"
                     >
                       <RefreshCw className="w-3 h-3" />
                     </Button>

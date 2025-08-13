@@ -15,11 +15,11 @@ export const TAX_BRACKETS: TaxBracket[] = [
 // Standard expense percentages by income type (Thai tax law)
 export const EXPENSE_PERCENTAGES: Record<IncomeType, number> = {
   [IncomeType.EMPLOYMENT]: 0, // No standard expenses, use actual expenses or standard deduction
-  [IncomeType.PROFESSIONAL_FEES]: 0.60, // 60% of income
-  [IncomeType.GOODWILL]: 0.60, // 60% of income
+  [IncomeType.PROFESSIONAL_FEES]: 0.50, // 50% of income
+  [IncomeType.GOODWILL]: 0.50, // 50% of income
   [IncomeType.INTEREST_DIVIDEND]: 0, // No expenses allowed
   [IncomeType.RENTAL_PROPERTY]: 0.30, // 30% of income
-  [IncomeType.LIBERAL_PROFESSION]: 0.60, // 60% of income
+  [IncomeType.LIBERAL_PROFESSION]: 0.30, // 60% of income
   [IncomeType.CONTRACTS_ADVERTISING]: 0.60, // 60% of income
   [IncomeType.OTHER_INCOME]: 0.60 // 60% of income
 };

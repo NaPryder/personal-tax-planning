@@ -10,6 +10,17 @@ export enum IncomeType {
   OTHER_INCOME = 8          // เงินได้จากการธุรกิจ การพาณิชย์ การเกษตร การอุตสาหกรรม การขนส่ง การขายอสังหาริมทรัพย์ หรือการอื่นนอกจากที่ระบุไว้ในประเภทที่ 1 ถึงประเภทที่ 7 แล้ว
 }
 
+// Thai Tax Deduction Categories
+export enum DeductionCategory {
+  PERSONAL = 'personal',           // ค่าลดหย่อนส่วนตัว
+  SPOUSE = 'spouse',              // ค่าลดหย่อนคู่สมรส
+  CHILD = 'child',                // ค่าลดหย่อนบุตร
+  PARENT = 'parent',              // ค่าลดหย่อนบิดามารดา
+  INSURANCE = 'insurance',        // ประกันภัย และประกันสังคม
+  DONATION = 'donation',          // เงินบริจาค
+  OTHER = 'other'                 // ค่าลดหย่อนอื่นๆ
+}
+
 export interface IncomeItem {
   id: string;
   type: IncomeType;
@@ -32,7 +43,7 @@ export interface DeductionItem {
   name: string;
   amount: number;
   isCustom: boolean;
-  category?: string;
+  category: DeductionCategory;
 }
 
 export interface TaxPlan {
@@ -69,5 +80,5 @@ export interface StandardDeduction {
   name: string;
   maxAmount: number;
   description: string;
-  category: 'personal' | 'spouse' | 'child' | 'parent' | 'insurance' | 'donation' | 'other';
+  category: DeductionCategory;
 }

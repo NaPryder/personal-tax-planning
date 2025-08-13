@@ -51,20 +51,20 @@ export function ExpenseEditDialog({
     <Dialog open={open} onOpenChange={handleClose}>
       <DialogContent className="sm:max-w-[400px]">
         <DialogHeader>
-          <DialogTitle>Edit Expense Amount</DialogTitle>
+          <DialogTitle>แก้ไขจำนวนค่าใช้จ่าย</DialogTitle>
         </DialogHeader>
         {expense && (
           <div className="grid gap-4 py-4">
             <div className="text-sm text-gray-600">
-              <p><strong>Income Type:</strong> {getIncomeTypeDisplayName(expense.incomeType)}</p>
-              <p><strong>Description:</strong> {expense.description}</p>
+              <p><strong>ประเภทรายได้:</strong> {getIncomeTypeDisplayName(expense.incomeType)}</p>
+              <p><strong>รายละเอียด:</strong> {expense.description}</p>
               {expense.defaultPercentage && (
-                <p><strong>Default Rate:</strong> {(expense.defaultPercentage * 100)}% of income</p>
+                <p><strong>อัตราเริ่มต้น:</strong> {(expense.defaultPercentage * 100)}% ของรายได้</p>
               )}
             </div>
 
             <div className="grid gap-2">
-              <Label htmlFor="custom-amount">Custom Amount (THB)</Label>
+              <Label htmlFor="custom-amount">จำนวนเงินที่กำหนดเอง (บาท)</Label>
               <Input
                 id="custom-amount"
                 type="number"
@@ -80,10 +80,10 @@ export function ExpenseEditDialog({
 
         <DialogFooter>
           <Button variant="outline" onClick={handleClose}>
-            Cancel
+            ยกเลิก
           </Button>
           <Button onClick={handleSave}>
-            Save Changes
+            บันทึก
           </Button>
         </DialogFooter>
       </DialogContent>
